@@ -1,5 +1,7 @@
 package entities;
 
+import com.sun.javafx.binding.StringFormatter;
+
 public class Employee {
 
     private String name;
@@ -42,5 +44,10 @@ public class Employee {
 
     public double payment(){
         return hours * valuePerHour;
+    }
+
+    @Override
+    public String toString(){
+        return name + " - $ " + String.format("%.2f", payment());
     }
 }
